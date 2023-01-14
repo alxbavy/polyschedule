@@ -1,6 +1,8 @@
 import asyncio
+
 import rapidjson
 from vkbottle import PhotoMessageUploader
+
 import polyschedule.utils.image as image
 import polyschedule.utils.keyboards as keyboards
 import polyschedule.utils.schedule as schedule

@@ -1,6 +1,8 @@
 import io
 from typing import Optional
+
 from PIL import Image, ImageFont, ImageDraw
+
 import polyschedule.utils.dates as dates
 
 

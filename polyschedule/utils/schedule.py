@@ -1,6 +1,8 @@
 from typing import Tuple, Optional
+
 import aiohttp
 import orjson
+
 from polyschedule.exceptions import GettingScheduleError
 
 

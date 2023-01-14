@@ -1,4 +1,5 @@
 from vkbottle import Bot
+
 from config import api
 from polyschedule.handlers import labelers
 
