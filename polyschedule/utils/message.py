@@ -3,9 +3,10 @@ import asyncio
 import rapidjson
 from vkbottle import PhotoMessageUploader
 
-import polyschedule.utils.image as image
+import polyschedule.image_tools.image as image
 import polyschedule.utils.keyboards as keyboards
 import polyschedule.utils.schedule_api as schedule_api
+from polyschedule.image_tools.generate_algorythms import SimpleImageGenerateAlgorythm, CircleIconImageGenerateAlgorythm
 from polyschedule.exceptions import GettingScheduleError
 from config import api
 
@@ -17,7 +18,7 @@ async def generate_day_message(day_date, group_id="35390") -> dict:
         if not day:
             return {"message": "На этот день расписания нет"}
 
-        uploader = await PhotoMessageUploader(api).upload(image.generate(day, icon=True))
+        uploader = await PhotoMessageUploader(api).upload(image.generate(day, CircleIconImageGenerateAlgorythm()))
         payload = rapidjson.dumps({"day_date": day_date})
 
         return {"attachment": uploader, "keyboard": keyboards.MAIN, "payload": payload}
@@ -39,7 +40,7 @@ async def generate_week_message(day_date, group_id="35390") -> dict:
             return {"message": f"На неделю {date_start} - {date_end} ({is_odd}) расписания нет", "keyboard": keyboards.WEEK, "payload": payload}
 
         async def get_uploader(schedule):
-            return await PhotoMessageUploader(api).upload(image.generate(schedule, min_height=700))
+            return await PhotoMessageUploader(api).upload(image.generate(schedule, SimpleImageGenerateAlgorythm()))
 
         tasks = []
         for day_schedule in week_schedule:
