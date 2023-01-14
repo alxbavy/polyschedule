@@ -5,14 +5,14 @@ from vkbottle import PhotoMessageUploader
 
 import polyschedule.utils.image as image
 import polyschedule.utils.keyboards as keyboards
-import polyschedule.utils.schedule as schedule
+import polyschedule.utils.schedule_api as schedule_api
 from polyschedule.exceptions import GettingScheduleError
 from config import api
 
 
 async def generate_day_message(day_date, group_id="35390") -> dict:
     try:
-        day = await schedule.get_day(group_id, date=day_date)
+        day = await schedule_api.get_day(group_id, date=day_date)
 
         if not day:
             return {"message": "На этот день расписания нет"}
@@ -27,7 +27,7 @@ async def generate_day_message(day_date, group_id="35390") -> dict:
 
 async def generate_week_message(day_date, group_id="35390") -> dict:
     try:
-        week_info, week_schedule = await schedule.get_week(group_id, date=day_date)
+        week_info, week_schedule = await schedule_api.get_week(group_id, date=day_date)
 
         date_start = week_info["date_start"]
         date_end = week_info["date_end"]
