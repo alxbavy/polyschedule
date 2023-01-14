@@ -4,15 +4,14 @@ import orjson
 from polyschedule.exceptions import GettingScheduleError
 
 
-async def _request_schedule(group_id, date) -> str:
+async def _request_json(group_id, date) -> str:
     async with aiohttp.ClientSession() as session:
         async with session.get(f"https://ruz.spbstu.ru/api/v1/ruz/scheduler/{group_id}?date={date}") as response:
-            return await response.text()
+            return orjson.loads(await response.text())
 
 
 async def get_week(group_id, date) -> Tuple[dict, Optional[list]]:
-    week_raw = await _request_schedule(group_id, date)
-    week_json = orjson.loads(week_raw)
+    week_json = await _request_json(group_id, date)
 
     if week_json.get("error"):
         raise GettingScheduleError(week_json["text"])
