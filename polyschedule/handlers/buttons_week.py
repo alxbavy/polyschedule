@@ -2,8 +2,8 @@ from vkbottle.bot import MessageEvent, BotLabeler
 from vkbottle import GroupEventType
 import orjson
 
-import polyschedule.utils.dates as dates
-from polyschedule.utils.message_generators import generate_week_message
+import polyschedule.dates as dates
+from polyschedule.message_generators import generate_week_message
 from config import api
 
 

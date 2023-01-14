@@ -4,8 +4,8 @@ import rapidjson
 from vkbottle import PhotoMessageUploader
 
 import polyschedule.image_tools.image as image
-import polyschedule.utils.keyboards as keyboards
-import polyschedule.utils.schedule_api as schedule_api
+import polyschedule.keyboards as keyboards
+import polyschedule.schedule_api as schedule_api
 from polyschedule.image_tools.generate_algorythms import SimpleImageGenerateAlgorythm, CircleIconImageGenerateAlgorythm
 from polyschedule.exceptions import GettingScheduleError
 from config import api

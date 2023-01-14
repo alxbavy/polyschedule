@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 from PIL import Image, ImageFont, ImageDraw
 
-import polyschedule.utils.dates as dates
+import polyschedule.dates as dates
 from polyschedule.image_tools.utils import Background, Color, FontStyle, START_PIXEL, get_weekday_by_num
 
 
