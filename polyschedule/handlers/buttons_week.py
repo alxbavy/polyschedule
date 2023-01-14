@@ -3,7 +3,7 @@ from vkbottle import GroupEventType
 import orjson
 
 import polyschedule.utils.dates as dates
-from polyschedule.utils.message import generate_week_message
+from polyschedule.utils.message_generators import generate_week_message
 from config import api
 
 

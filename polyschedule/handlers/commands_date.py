@@ -1,7 +1,7 @@
 from vkbottle.bot import Message, BotLabeler
 
 import polyschedule.utils.dates as dates
-from polyschedule.utils.message import generate_week_message, generate_day_message
+from polyschedule.utils.message_generators import generate_week_message, generate_day_message
 
 
 labeler = BotLabeler()
