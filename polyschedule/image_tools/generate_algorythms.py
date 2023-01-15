@@ -38,17 +38,17 @@ class CircleIconImageGenerateAlgorythm(IImageGenerateAlgorythm):
                 fill=Color.GRAY
             )  # date
 
-            for lesson in day_data["lessons"]:
+            for lesson in day_data['lessons']:
                 subject = lesson['subject']
                 if len(subject) >= 26:
-                    subject = subject[:26] + "..."
+                    subject = subject[:26] + '...'
 
-                with Image.open("./images/clock.jpg") as clock_image:
+                with Image.open('./images/clock.jpg') as clock_image:
                     image.paste(clock_image, (int(width/2.5), pixel-2))
 
                 draw.text(
                     xy=(width/2.5*1.2, pixel), 
-                    text=f"{lesson['time_start']} - {lesson['time_end']}", 
+                    text='{} - {}'.format(lesson['time_start'], lesson['time_end']), 
                     font=ImageFont.truetype(FontStyle.REGULAR, 18), 
                     fill=Color.GRAY
                 )  # time
@@ -67,10 +67,10 @@ class CircleIconImageGenerateAlgorythm(IImageGenerateAlgorythm):
                     fill=Color.BLACK
                 )  # subject
 
-                auditory = lesson["auditories"][0]
+                auditory = lesson['auditories'][0]
                 draw.text(
                     xy=(width/14, pixel+25+35), 
-                    text=f"{auditory['building']['abbr']}, {auditory['name']}", 
+                    text='{}, {}'.format(auditory['building']['abbr'], auditory['name']), 
                     font=ImageFont.truetype(FontStyle.REGULAR, 18), 
                     fill=Color.GRAY
                 )  # building
@@ -108,17 +108,17 @@ class SimpleImageGenerateAlgorythm(IImageGenerateAlgorythm):
                 fill=Color.GRAY
             )  # date
 
-            for lesson in day_data["lessons"]:
+            for lesson in day_data['lessons']:
                 subject = lesson['subject']
                 if len(subject) >= 26:
-                    subject = subject[:26] + "..."
+                    subject = subject[:26] + '...'
 
-                with Image.open("./images/clock.jpg") as clock_image:
+                with Image.open('./images/clock.jpg') as clock_image:
                     image.paste(clock_image, (int(width/2.5), pixel-2))
 
                 draw.text(
                     xy=(width/2.5*1.2, pixel), 
-                    text=f"{lesson['time_start']} - {lesson['time_end']}", 
+                    text='{} - {}'.format(lesson['time_start'], lesson['time_end']), 
                     font=ImageFont.truetype(FontStyle.REGULAR, 18), 
                     fill=Color.GRAY
                 )  # time
@@ -137,10 +137,10 @@ class SimpleImageGenerateAlgorythm(IImageGenerateAlgorythm):
                     fill=Color.BLACK
                 )  # subject
 
-                auditory = lesson["auditories"][0]
+                auditory = lesson['auditories'][0]
                 draw.text(
                     xy=(width/14, pixel+25+35), 
-                    text=f"{auditory['building']['abbr']}, {auditory['name']}", 
+                    text='{}, {}'.format(auditory['building']['abbr'], auditory['name']), 
                     font=ImageFont.truetype(FontStyle.REGULAR, 18), 
                     fill=Color.GRAY
                 )  # building

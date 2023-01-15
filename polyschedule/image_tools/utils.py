@@ -1,6 +1,6 @@
 class FontStyle:
-    REGULAR = "./fonts/Comfortaa-Regular.ttf"
-    LIGHT = "./fonts/Comfortaa-Light.ttf"
+    REGULAR = './fonts/Comfortaa-Regular.ttf'
+    LIGHT = './fonts/Comfortaa-Light.ttf'
 
 
 class Color:
@@ -10,13 +10,13 @@ class Color:
 
 
 class Background:
-    EMPTY = "./images/empty_pattern.jpg"
-    CIRCLE_ICON = "./images/pattern.jpg"
+    EMPTY = './images/empty_pattern.jpg'
+    CIRCLE_ICON = './images/pattern.jpg'
 
 
 def get_weekday_by_num(weekday_num: int) -> str:
     return WEEK_DAYS[weekday_num - 1]
 
 
-WEEK_DAYS = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+WEEK_DAYS = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
 START_PIXEL = 155

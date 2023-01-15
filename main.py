@@ -4,7 +4,7 @@ from config import api
 from polyschedule.handlers import labelers
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     bot = Bot(api=api)
 
     for labeler in labelers:
