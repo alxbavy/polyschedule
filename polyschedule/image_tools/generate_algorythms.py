@@ -14,13 +14,13 @@ class IImageGenerateAlgorythm(ABC):
 
 
 class CircleIconImageGenerateAlgorythm(IImageGenerateAlgorythm):
-    background: Background = Background.CIRCLE_ICON
+    background: str = Background.CIRCLE_ICON
 
     def generate(self, day_data):
         pixel = START_PIXEL
 
         with Image.open(self.background) as image:
-            width, height = image.size    
+            width, height = image.size
             
             draw = ImageDraw.Draw(image)
 
@@ -84,7 +84,7 @@ class CircleIconImageGenerateAlgorythm(IImageGenerateAlgorythm):
 
 
 class SimpleImageGenerateAlgorythm(IImageGenerateAlgorythm):
-    background: Background = Background.EMPTY
+    background: str = Background.EMPTY
 
     def generate(self, day_data):
         pixel = START_PIXEL
