@@ -24,7 +24,7 @@ async def get_week(group_id, date) -> Tuple[dict, Optional[list]]:
     return week_info, week_schedule or None
 
 
-async def get_day(group_id, date) -> Optional[Tuple[list]]:
+async def get_day(group_id, date) -> Optional[dict]:
     _, week_schedule = await get_week(group_id, date)
 
     if not week_schedule:

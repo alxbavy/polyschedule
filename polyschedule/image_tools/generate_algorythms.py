@@ -33,15 +33,15 @@ _WEEK_DAYS = ('Понедельник', 'Вторник', 'Среда', 'Чет�
 
 class IImageGenerateAlgorythm(ABC):
     @abstractmethod
-    def generate(self, day_data):
-        pass
+    def generate(self, day_data: dict) -> bytes:
+        ...
 
 
 class CircleIconImageGenerateAlgorythm(IImageGenerateAlgorythm):
     BACKGROUND: str = _Background.CIRCLE_ICON
     START_DRAWING_POINT: float = 155
 
-    def generate(self, day_data):
+    def generate(self, day_data: dict) -> bytes:
         drawing_point = self.START_DRAWING_POINT
 
         with Image.open(self.BACKGROUND) as image:
@@ -118,7 +118,7 @@ class SimpleImageGenerateAlgorythm(IImageGenerateAlgorythm):
     START_DRAWING_POINT: float = 155
     MIN_LENGTH = 700
 
-    def generate(self, day_data):
+    def generate(self, day_data: dict) -> bytes:
         drawing_point = self.START_DRAWING_POINT
 
         with Image.open(self.BACKGROUND) as image:

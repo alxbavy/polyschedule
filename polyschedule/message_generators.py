@@ -1,4 +1,5 @@
 import asyncio
+from typing import Optional
 
 import rapidjson
 from vkbottle import PhotoMessageUploader
